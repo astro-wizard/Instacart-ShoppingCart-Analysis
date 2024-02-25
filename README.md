@@ -1,4 +1,4 @@
-# Instacart Market Basket Analysis
+# Instacart Shopping cart Analysis
 
 ## Introduction
 
@@ -24,7 +24,7 @@ Instacart is an American technology company that operates grocery delivery and p
 ├── Data Description and Overview.ipynb         : Initial analysis to understand data
 ├── Exploratory Data Analysis.ipynb             : EDA to analyze customer purchase pattern
 ├── Customers Segmentation and Profiling .ipynb    : Customer Segmentation based on product aisles
-├── Market Basket Analysis.ipynb                : Market Basket Analysis to find products association
+├── Shopping Cart Analysis.ipynb                : Shopping Cart Analysis to find products association
 ├── Modeling_ensemble.ipynb                     : Predict customer reorder tendencies using CatBoost
 ├── utils.py                                    : Script containing helper functions for memory optimization and EDA
 ├── modeling_utils.py                           : Script containing utility functions for modeling
@@ -64,15 +64,15 @@ The clustering results into 5 customer cohorts and after checking most frequent 
 
 - The mean orders for customers in cohort 5 are low compared to other clusters which tells us that either they are not frequent users of Instacart or they are new users and do not have many orders yet.
 
-## Market Basket Analysis
+## Shopping Cart Analysis
 
-A modeling technique called market basket analysis is based on the idea that you are either more or less likely to buy one group of goods after purchasing another. Market basket analysis may give the store details about a customer's purchasing habits. In addition to impacting sales promotions, loyalty programs, store layout, and discount schemes, this information can also be used for cross-selling and up-selling.
+A modeling technique called shopping cart analysis is based on the idea that you are either more or less likely to buy one group of goods after purchasing another. Shopping cart analysis may give the store details about a customer's purchasing habits. In addition to impacting sales promotions, loyalty programs, store layout, and discount schemes, this information can also be used for cross-selling and up-selling.
 
-Market basket analysis examines the items that customers frequently purchase together and analyzes the data to determine which products should be promoted or marketed cross-sell. The phrase refers to the amount of groceries that supermarket patrons load into their trolleys when out shopping.
+Shopping cart analysis examines the items that customers frequently purchase together and analyzes the data to determine which products should be promoted or marketed cross-sell. The phrase refers to the amount of groceries that supermarket patrons load into their trolleys when out shopping.
 
 When attempting to identify a relationship between various items in a collection or identify recurring patterns in a transaction database, relational database, or other information repository, association rule mining is used.
 
-The method used by major retailers like Amazon, Flipkart, and others to analyze customer purchasing patterns by identifying associations between the various items that customers place in their "shopping baskets" is known as market basket analysis, and it is the most popular method for discovering these patterns. The identification of these relationships can assist merchants in creating marketing plans by providing information on the products that customers typically buy in tandem. The tactics could consist of:
+The method used by major retailers like Amazon, Flipkart, and others to analyze customer purchasing patterns by identifying associations between the various items that customers place in their "shopping baskets" is known as shopping cart analysis, and it is the most popular method for discovering these patterns. The identification of these relationships can assist merchants in creating marketing plans by providing information on the products that customers typically buy in tandem. The tactics could consist of:
 
 - Changing the store layout according to trends
 - Customers behavior analysis
@@ -94,7 +94,7 @@ The method used by major retailers like Amazon, Flipkart, and others to analyze 
 - Lift (A => B) > 1 means that there is a positive correlation within the itemset, i.e., products in the itemset, A, and B, are more likely to be bought together.
 - Lift (A => B) < 1 means that there is a negative correlation within the itemset, i.e., products in itemset, A, and B, are unlikely to be bought together.
 
-**Apriori Algorithm:**  Apriori algorithm assumes that any subset of a frequent itemset must be frequent. It is the underlying Market Basket Analysis algorithm used in this project. Let's say that a transaction that has "Apples, Mango, Grapes" also contains "Grapes, Mango." Therefore, if "Grapes, Apple, Mango" are often, then "Grapes, Mango" must likewise be frequent, according to the a priori principle.
+**Apriori Algorithm:**  Apriori algorithm assumes that any subset of a frequent itemset must be frequent. It is the underlying Shopping Cart Analysis algorithm used in this project. Let's say that a transaction that has "Apples, Mango, Grapes" also contains "Grapes, Mango." Therefore, if "Grapes, Apple, Mango" are often, then "Grapes, Mango" must likewise be frequent, according to the a priori principle.
 
 I used the apriori method from the `Mlxtend` Python library to identify associations between the top 100 most common items, and as a result, 28 product pairs (a total of 56 rules) with lift greater than 1 were identified. Following are the top 10 product combos with the highest lift:
 
